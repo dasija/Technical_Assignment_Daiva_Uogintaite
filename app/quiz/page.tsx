@@ -71,19 +71,20 @@ export default function QuizPage() {
   };
 
   return (
-    <main className="flex flex-col items-center min-h-screen bg-[#F7F7F7] px-6 py-8">
+    <main className="flex flex-col items-center justify-start w-[375px] min-h-[640px] px-5 pb-5 gap-8 mx-auto bg-[#f9f6f4]">
+      {/* Header */}
       <QuizHeader
         step={step}
         total={questions.length}
         onBack={() => (step > 1 ? setStep(step - 1) : router.back())}
       />
 
-      <ProgressBar value={(step / questions.length) * 100} />
-
-      <h2 className="text-center text-[20px] font-semibold text-gray-800 mb-6">
+      {/* Question */}
+      <h2 className="text-center text-[20px] font-semibold text-gray-800 mb-6 leading-tight">
         {current.text}
       </h2>
 
+      {/* Answers */}
       <AnswersList
         options={current.options}
         step={step}

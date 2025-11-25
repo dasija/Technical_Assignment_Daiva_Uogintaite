@@ -1,11 +1,11 @@
 "use client";
-import Logo from "../Logo";
+import LogoSVG from "../LogoSVG";
 
 export default function CheckoutNavbar({ time }: { time: string }) {
   return (
     <div className="w-full bg-[#FFC300] py-4 px-6 flex items-center justify-between">
       <div className="scale-70 -ml-6">
-        <Logo />
+        <LogoSVG />
       </div>
 
       <div className="text-xl font-semibold">

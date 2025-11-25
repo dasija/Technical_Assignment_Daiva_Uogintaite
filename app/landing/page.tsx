@@ -1,9 +1,8 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
-import Logo from "../components/Logo";
 import GenderCard from "../components/GenderCard";
+import LogoSVG from "../components/LogoSVG";
 
 export default function LandingPage() {
   const router = useRouter();
@@ -16,21 +15,27 @@ export default function LandingPage() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-[#F9F6F3] px-6 text-center font-['Nunito']">
+    <main
+      className="flex flex-col items-center justify-start bg-[#F9F6F3] 
+                 text-gray-800 font-['Nunito'] w-[375px] h-[640px] 
+                 mx-auto px-5 pt-6 pb-5">
       {/* LOGO */}
-      <div className="scale-60 absolute top-1 left-1/2 -translate-x-1/2">
-        <Logo />
+      <div className="flex items-center justify-center pt-6">
+        <LogoSVG />
       </div>
 
-      <h2 className="text-[22px] font-bold text-gray-800 mb-2">
-        What is your gender?
-      </h2>
-      <p className="text-gray-800 mb-12 text-sm">
-        We will use this to personalize your plan
-      </p>
+      {/* TITLE */}
+      <div className="flex flex-col items-center justify-center mt-6 text-center space-y-2">
+        <h2 className="font-['Figtree'] font-semibold text-[24px] leading-[28px] text-[#1E1E1E] text-center">
+          What is your gender?
+        </h2>
+        <p className="font-[var(--font-figtree)] font-normal text-[14px] leading-[18px] text-center text-[#1E1E1E]">
+          We will use this to personalize your plan
+        </p>
+      </div>
 
-      {/* CARDS */}
-      <div className="flex gap-4 mt-20">
+      {/* GENDER CARDS CONTAINER */}
+      <div className="flex gap-[10px] w-[335px] h-[446px] justify-center items-center mt-10">
         <GenderCard type="male" selected={selected} onSelect={handleSelect} />
         <GenderCard type="female" selected={selected} onSelect={handleSelect} />
       </div>
